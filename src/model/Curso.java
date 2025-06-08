@@ -6,6 +6,11 @@ public class Curso {
 	private String area_de_conhecimento;
 	private boolean processo_aberto;
 	
+	//Construtor Padrão
+	public Curso() {		
+	}
+	
+	// Construtor completo
 	public Curso(int cod_curso, String nome_curso, String area_de_conhecimento, boolean processo_aberto) {
 		super();
 		this.cod_curso = cod_curso;
@@ -13,6 +18,8 @@ public class Curso {
 		this.area_de_conhecimento = area_de_conhecimento;
 		this.processo_aberto = processo_aberto;
 	}
+	
+	//Getters e Setters
 	public int getCod_curso() {
 		return cod_curso;
 	}

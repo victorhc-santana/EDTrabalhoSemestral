@@ -5,13 +5,19 @@ public class Inscricao {
 	private int cod_processo;
 	private int cod_disciplina;
 	
+	//Construtor Padrão
+	public Inscricao() {		
+	}
+	
+	// Construtor completo
 	public Inscricao(int cpf_prof, int cod_processo, int cod_disciplina) {
 		super();
 		this.cpf_prof = cpf_prof;
 		this.cod_processo = cod_processo;
 		this.cod_disciplina = cod_disciplina;
 	}
-
+	
+	//Getters e Setters
 	public int getCpf_prof() {
 		return cpf_prof;
 	}

@@ -22,7 +22,8 @@ public class Disciplina {
         this.hora_duracao = hora_duracao;
         this.hora_inicial = hora_inicial;
     }
-    //getters e setters
+    
+    //Getters e Setters
 	public int getCod_disciplina() {
 		return cod_disciplina;
 	}

@@ -6,10 +6,11 @@ public class Professor {
 	private int cpf;
 	private double pontuação;
 	
-	public Professor() {
-		
+	//Construtor Padrão
+	public Professor() {		
 	}
 	
+	// Construtor completo
 	public Professor(String nome_professor, String area_a_inscrever, int cpf, double pontuação) {
 		super();
 		this.nome_professor = nome_professor;
@@ -18,6 +19,7 @@ public class Professor {
 		this.pontuação = pontuação;
 	}
 
+	//Getters e Setters
 	public String getNome_professor() {
 		return nome_professor;
 	}
