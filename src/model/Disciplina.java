@@ -1,7 +1,6 @@
 package model;
 
 public class Disciplina {
-
     private int cod_disciplina;
     private int cod_curso;
     private String nome_disciplina;
