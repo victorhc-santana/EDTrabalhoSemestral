@@ -37,10 +37,11 @@ public class Inscricao {
 	public int getCod_disciplina() {
 		return cod_disciplina;
 	}
-
+	
 	public void setCod_disciplina(int cod_disciplina) {
 		this.cod_disciplina = cod_disciplina;
 	}
 	
+	//teste
 	
 }
