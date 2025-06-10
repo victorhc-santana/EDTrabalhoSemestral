@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.border.TitledBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import java.awt.Color;
@@ -24,12 +23,6 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfCpfProfessor;
 	private JTextField tfAreaProfessor;
 	private JTextField tfPontuacaoProfessor;
-	private JTextField tfCodigoDisciplinaAt;
-	private JTextField tfNomeDiscAt;
-	private JTextField tfDiaSemanaDiscAt;
-	private JTextField tfHorasDiaDiscAt;
-	private JTextField tfCodCursoDiscAt;
-	private JTextField tfHoraInicialDiscAt;
 	private JTextField tfCpfProfessorAt;
 	private JTextField tfNomeProfAt;
 	private JTextField tfAreaProfAt;
@@ -70,123 +63,8 @@ public class TelaPrincipal extends JFrame {
 		tabbedClasse.setBounds(0, 0, 624, 441);
 		contentPane.add(tabbedClasse);
 		
-		//Inicia aba para o CRUD de Disciplinas
-		JTabbedPane tabbedDisciplinas = new JTabbedPane(JTabbedPane.LEFT);
-		tabbedClasse.addTab("Disciplinas", null, tabbedDisciplinas, null);
-		
-		//Painel referente ao cadastro de disciplina
-		JPanel panelCadastroDisciplina = new JPanel();
-		tabbedDisciplinas.addTab("Inserir", null, panelCadastroDisciplina, null);
-		
-		//Painel referente a atualizacao de disciplinas
-		JPanel panelAtualizaDisciplina = new JPanel();
-		tabbedDisciplinas.addTab("Atualizar", null, panelAtualizaDisciplina, null);
-		
-		JLabel lblGuiaCodDisc = new JLabel("Digite o código da disciplina");
-		lblGuiaCodDisc.setBounds(20, 27, 205, 34);
-		lblGuiaCodDisc.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		
-		JLabel lblCodDisciplinaA = new JLabel("Código da disciplina");
-		lblCodDisciplinaA.setBounds(20, 72, 121, 34);
-		lblCodDisciplinaA.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		
-		tfCodigoDisciplinaAt = new JTextField();
-		tfCodigoDisciplinaAt.setBounds(139, 80, 86, 20);
-		tfCodigoDisciplinaAt.setColumns(10);
-		
-		JButton btnBuscarAt = new JButton("Buscar");
-		btnBuscarAt.setBounds(235, 79, 89, 23);
-		panelAtualizaDisciplina.setLayout(null);
-		panelAtualizaDisciplina.add(lblGuiaCodDisc);
-		panelAtualizaDisciplina.add(lblCodDisciplinaA);
-		panelAtualizaDisciplina.add(tfCodigoDisciplinaAt);
-		panelAtualizaDisciplina.add(btnBuscarAt);
-		
-		JPanel panelEditDadosDisc = new JPanel();
-		panelEditDadosDisc.setBorder(new TitledBorder(null, "Editar dados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panelEditDadosDisc.setBounds(20, 117, 497, 273);
-		panelAtualizaDisciplina.add(panelEditDadosDisc);
-		panelEditDadosDisc.setLayout(null);
-		
-		JPanel panelDadosDisciplinas = new JPanel();
-		panelDadosDisciplinas.setBounds(10, 24, 477, 238);
-		panelEditDadosDisc.add(panelDadosDisciplinas);
-		panelDadosDisciplinas.setLayout(null);
-		
-		JLabel lblNomeDiscAt = new JLabel("Nome da disciplina");
-		lblNomeDiscAt.setBounds(10, 21, 113, 16);
-		lblNomeDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panelDadosDisciplinas.add(lblNomeDiscAt);
-		
-		tfNomeDiscAt = new JTextField();
-		tfNomeDiscAt.setColumns(10);
-		tfNomeDiscAt.setBounds(125, 20, 86, 20);
-		panelDadosDisciplinas.add(tfNomeDiscAt);
-		
-		JLabel lblDiaSemanaDiscAt = new JLabel("Dia da semana");
-		lblDiaSemanaDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblDiaSemanaDiscAt.setBounds(22, 70, 86, 16);
-		panelDadosDisciplinas.add(lblDiaSemanaDiscAt);
-		
-		tfDiaSemanaDiscAt = new JTextField();
-		tfDiaSemanaDiscAt.setColumns(10);
-		tfDiaSemanaDiscAt.setBounds(125, 69, 86, 20);
-		panelDadosDisciplinas.add(tfDiaSemanaDiscAt);
-		
-		JLabel lblHorasDiaDiscAt = new JLabel("Horas diárias");
-		lblHorasDiaDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblHorasDiaDiscAt.setBounds(258, 21, 86, 16);
-		panelDadosDisciplinas.add(lblHorasDiaDiscAt);
-		
-		tfHorasDiaDiscAt = new JTextField();
-		tfHorasDiaDiscAt.setColumns(10);
-		tfHorasDiaDiscAt.setBounds(354, 20, 86, 20);
-		panelDadosDisciplinas.add(tfHorasDiaDiscAt);
-		
-		JLabel lblCodCursoDiscAt = new JLabel("Código do curso");
-		lblCodCursoDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblCodCursoDiscAt.setBounds(252, 70, 92, 16);
-		panelDadosDisciplinas.add(lblCodCursoDiscAt);
-		
-		tfCodCursoDiscAt = new JTextField();
-		tfCodCursoDiscAt.setColumns(10);
-		tfCodCursoDiscAt.setBounds(354, 69, 86, 20);
-		panelDadosDisciplinas.add(tfCodCursoDiscAt);
-		
-		JLabel lblHoraInicialDiscAt = new JLabel("Hora inicial");
-		lblHoraInicialDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblHoraInicialDiscAt.setBounds(142, 138, 69, 16);
-		panelDadosDisciplinas.add(lblHoraInicialDiscAt);
-		
-		tfHoraInicialDiscAt = new JTextField();
-		tfHoraInicialDiscAt.setColumns(10);
-		tfHoraInicialDiscAt.setBounds(214, 137, 86, 20);
-		panelDadosDisciplinas.add(tfHoraInicialDiscAt);
-		
-		JButton btnAtualizaDisciplina = new JButton("Atualizar disciplina");
-		btnAtualizaDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAtualizaDisciplina.setBounds(296, 194, 144, 23);
-		panelDadosDisciplinas.add(btnAtualizaDisciplina);
-		
-		//Painel referente a remoção e consulta de disciplinas
-		JPanel panelConsultaDisciplina = new JPanel();
-		tabbedDisciplinas.addTab("Consultar", null, panelConsultaDisciplina, null);
-		
-		//Inicia aba para o CRUD de Curso
-		JTabbedPane tabbedCurso = new JTabbedPane(JTabbedPane.LEFT);
-		tabbedClasse.addTab("Cursos", null, tabbedCurso, null);
-		
-		//Painel referente ao cadastro de cursos
-		JPanel panelCadastroCurso = new JPanel();
-		tabbedCurso.addTab("Inserir", null, panelCadastroCurso, null);
-		
-		//Painel referente a atualizacao de cursos
-		JPanel panelAtualizaCurso = new JPanel();
-		tabbedCurso.addTab("Atualizar", null, panelAtualizaCurso, null);
-						
-		//Painel referente a remoção e consulta de cursos
-		JPanel panelConsultaCurso = new JPanel();
-		tabbedCurso.addTab("Consultar", null, panelConsultaCurso, null);	
+		JPanel panel = new JPanel();
+		tabbedClasse.addTab("New tab", null, panel, null);
 		
 		//Inicia aba para o CRUD de Professor
 		JTabbedPane tabbedProfessor = new JTabbedPane(JTabbedPane.LEFT);
@@ -343,32 +221,56 @@ public class TelaPrincipal extends JFrame {
 		btnRemoveProfessor.setBounds(398, 345, 89, 23);
 		panelConsultaProfessor.add(btnRemoveProfessor);
 		
-		//Inicia aba para o CRUD de Inscricao
-		JTabbedPane tabbedInscricao = new JTabbedPane(JTabbedPane.LEFT);
-		tabbedClasse.addTab("Inscricoes", null, tabbedInscricao, null);
+		JPanel panelDisciplinas = new JPanel();
+		tabbedClasse.addTab("Disciplinas", null, panelDisciplinas, null);
+		panelDisciplinas.setLayout(null);
 		
-		//Painel referente ao cadastro de Inscricao
-		JPanel panelCadastroInscricao = new JPanel();
-		tabbedInscricao.addTab("Inserir", null, panelCadastroInscricao, null);
+		JLabel lblCodDisciplinaA_1 = new JLabel("Código da disciplina");
+		lblCodDisciplinaA_1.setBounds(28, 92, 121, 34);
+		lblCodDisciplinaA_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblCodDisciplinaA_1);
 		
-		JButton button = new JButton("New button");
-		panelCadastroInscricao.add(button);
-						
-		//Painel referente a atualizacao de Inscricao
-		JPanel panelAtualizaInscricao = new JPanel();
-		tabbedInscricao.addTab("Atualizar", null, panelAtualizaInscricao, null);
-						
-		//Painel referente a remoção e consulta de Inscricao
-		JPanel panelConsultaInscricao = new JPanel();
-		tabbedInscricao.addTab("Consultar", null, panelConsultaInscricao, null);
+		JLabel lblNomeDiscAt_1 = new JLabel("Nome da disciplina");
+		lblNomeDiscAt_1.setBounds(28, 65, 113, 16);
+		lblNomeDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblNomeDiscAt_1);
 		
-		//Inicia painel para consulta de nota de professor por disciplina
-		JPanel panelNotas = new JPanel();
-		tabbedClasse.addTab("Notas", null, panelNotas, null);
+		JLabel lblDiaSemanaDiscAt_1 = new JLabel("Dia da semana");
+		lblDiaSemanaDiscAt_1.setBounds(28, 140, 86, 16);
+		lblDiaSemanaDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblDiaSemanaDiscAt_1);
 		
-		//Inicia painel de consulta de processos 
-		JPanel panelProcessos = new JPanel();
-		tabbedClasse.addTab("Processos", null, panelProcessos, null);
+		JLabel lblHorasDiaDiscAt_1 = new JLabel("Horas diárias");
+		lblHorasDiaDiscAt_1.setBounds(374, 67, 86, 16);
+		lblHorasDiaDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblHorasDiaDiscAt_1);
+		
+		JLabel lblCodCursoDiscAt_1 = new JLabel("Código do curso");
+		lblCodCursoDiscAt_1.setBounds(374, 103, 92, 16);
+		lblCodCursoDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblCodCursoDiscAt_1);
+		
+		JLabel lblHoraInicialDiscAt_1 = new JLabel("Hora inicial");
+		lblHoraInicialDiscAt_1.setBounds(374, 142, 69, 16);
+		lblHoraInicialDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblHoraInicialDiscAt_1);
+		
+		JButton btnAtualizaDisciplina_1 = new JButton("Atualizar disciplina");
+		btnAtualizaDisciplina_1.setBounds(316, 357, 144, 23);
+		btnAtualizaDisciplina_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelDisciplinas.add(btnAtualizaDisciplina_1);
+		
+		JTextArea taDisciplina = new JTextArea();
+		taDisciplina.setBounds(10, 167, 599, 160);
+		panelDisciplinas.add(taDisciplina);
+		
+		JButton btnCadastroDisciplina = new JButton("Cadastrar Disciplina");
+		btnCadastroDisciplina.setBounds(470, 357, 89, 23);
+		panelDisciplinas.add(btnCadastroDisciplina);
+		
+		JButton btnBuscaDisciplina = new JButton("Buscar");
+		btnBuscaDisciplina.setBounds(253, 99, 89, 23);
+		panelDisciplinas.add(btnBuscaDisciplina);
 		
 		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor);
 		btnCadastroProfessor.addActionListener(pCont);
