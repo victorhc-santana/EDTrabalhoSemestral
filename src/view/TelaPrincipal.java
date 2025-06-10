@@ -14,6 +14,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import java.awt.Color;
 import javax.swing.JScrollPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaPrincipal extends JFrame {
 
@@ -34,6 +36,13 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfHorasDiariasDisciplina;
 	private JTextField tfCodigoCursoDisciplina;
 	private JTextField tfHoraInicialDisciplina;
+	private JTextField tfCodigoCurso;
+	private JTextField tfNomeCurso;
+	private JTextField tfAreaConhecimento;
+	private JTextField taCodCurso;
+	private JTextField taCodDisciplina;
+	private JTextField taCodProfessor;
+	private JTextField taCodProcesso;
 
 	/**
 	 * Launch the application.
@@ -317,6 +326,140 @@ public class TelaPrincipal extends JFrame {
 		panelDisciplinas.add(btnRemoveDisciplina);
 		
 		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor);
+		
+		JPanel tabCurso = new JPanel();
+		tabbedClasse.addTab("Curso", null, tabCurso, null);
+		tabCurso.setLayout(null);
+		
+		JLabel lblCodigoCurso = new JLabel("Código do Curso");
+		lblCodigoCurso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCodigoCurso.setBounds(49, 42, 130, 28);
+		tabCurso.add(lblCodigoCurso);
+		
+		tfCodigoCurso = new JTextField();
+		tfCodigoCurso.setBounds(222, 49, 96, 19);
+		tabCurso.add(tfCodigoCurso);
+		tfCodigoCurso.setColumns(10);
+		
+		JLabel lblNomeCurso = new JLabel("Nome do Curso");
+		lblNomeCurso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNomeCurso.setBounds(49, 89, 112, 19);
+		tabCurso.add(lblNomeCurso);
+		
+		tfNomeCurso = new JTextField();
+		tfNomeCurso.setBounds(222, 90, 96, 21);
+		tabCurso.add(tfNomeCurso);
+		tfNomeCurso.setColumns(10);
+		
+		JLabel lblAreaConhecimento = new JLabel("Area de Conhecimento");
+		lblAreaConhecimento.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblAreaConhecimento.setBounds(49, 125, 155, 28);
+		tabCurso.add(lblAreaConhecimento);
+		
+		tfAreaConhecimento = new JTextField();
+		tfAreaConhecimento.setBounds(222, 132, 182, 19);
+		tabCurso.add(tfAreaConhecimento);
+		tfAreaConhecimento.setColumns(10);
+		
+		JTextArea taCurso = new JTextArea();
+		taCurso.setBounds(10, 182, 599, 174);
+		tabCurso.add(taCurso);
+		
+		JButton btnRemoveCurso = new JButton("Remover Curso");
+		btnRemoveCurso.setForeground(new Color(0, 0, 0));
+		btnRemoveCurso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnRemoveCurso.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnRemoveCurso.setBounds(34, 383, 112, 21);
+		tabCurso.add(btnRemoveCurso);
+		
+		JButton btnCadastraCurso = new JButton("Cadastrar Curso");
+		btnCadastraCurso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCadastraCurso.setBounds(477, 383, 119, 21);
+		tabCurso.add(btnCadastraCurso);
+		
+		JButton btnAtualizaCurso = new JButton("Atualizar Curso");
+		btnAtualizaCurso.setBounds(355, 383, 112, 21);
+		tabCurso.add(btnAtualizaCurso);
+		
+		JButton btnBuscaCurso = new JButton("Buscar");
+		btnBuscaCurso.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnBuscaCurso.setBounds(382, 90, 85, 21);
+		tabCurso.add(btnBuscaCurso);
+		
+		JPanel tabInscricao = new JPanel();
+		tabbedClasse.addTab("Inscrição", null, tabInscricao, null);
+		tabInscricao.setLayout(null);
+		
+		JLabel lblCurso = new JLabel("Código Curso");
+		lblCurso.setBounds(48, 51, 103, 13);
+		lblCurso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		tabInscricao.add(lblCurso);
+		
+		JLabel lblCodigoDisciplina = new JLabel("Código da Disciplina");
+		lblCodigoDisciplina.setBounds(48, 88, 127, 22);
+		lblCodigoDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		tabInscricao.add(lblCodigoDisciplina);
+		
+		JLabel lblCodProfessor = new JLabel("Código do Professor");
+		lblCodProfessor.setBounds(48, 138, 154, 13);
+		lblCodProfessor.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		tabInscricao.add(lblCodProfessor);
+		
+		JLabel lblCodProcesso = new JLabel("Código do Processo");
+		lblCodProcesso.setBounds(48, 181, 127, 13);
+		lblCodProcesso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		tabInscricao.add(lblCodProcesso);
+		
+		taCodCurso = new JTextField();
+		taCodCurso.setBounds(240, 50, 96, 19);
+		tabInscricao.add(taCodCurso);
+		taCodCurso.setColumns(10);
+		
+		taCodDisciplina = new JTextField();
+		taCodDisciplina.setBounds(240, 92, 96, 19);
+		tabInscricao.add(taCodDisciplina);
+		taCodDisciplina.setColumns(10);
+		
+		taCodProfessor = new JTextField();
+		taCodProfessor.setBounds(240, 137, 96, 19);
+		tabInscricao.add(taCodProfessor);
+		taCodProfessor.setColumns(10);
+		
+		taCodProcesso = new JTextField();
+		taCodProcesso.setBounds(240, 180, 96, 19);
+		tabInscricao.add(taCodProcesso);
+		taCodProcesso.setColumns(10);
+		
+		JTextArea taInscricao = new JTextArea();
+		taInscricao.setBounds(10, 221, 599, 161);
+		tabInscricao.add(taInscricao);
+		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnBuscar.setBounds(419, 179, 85, 21);
+		tabInscricao.add(btnBuscar);
+		
+		JButton btnRemoveInscricao = new JButton("Remover Inscrição");
+		btnRemoveInscricao.setBounds(20, 393, 117, 21);
+		tabInscricao.add(btnRemoveInscricao);
+		
+		JButton btnInscreverProfessor = new JButton("Inscrever Professor");
+		btnInscreverProfessor.setBounds(463, 392, 146, 21);
+		tabInscricao.add(btnInscreverProfessor);
+		
+		JButton btnAtualizaInscricao = new JButton("Atualizar Inscrição");
+		btnAtualizaInscricao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAtualizaInscricao.setBounds(327, 392, 126, 21);
+		tabInscricao.add(btnAtualizaInscricao);
 		btnCadastroProfessor.addActionListener(pCont);
 	}
 }
