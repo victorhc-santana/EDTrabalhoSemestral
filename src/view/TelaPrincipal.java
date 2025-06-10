@@ -6,11 +6,27 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.BoxLayout;
+import java.awt.BorderLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.GridLayout;
+import javax.swing.border.TitledBorder;
 
 public class TelaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
 
 	/**
 	 * Launch the application.
@@ -57,6 +73,92 @@ public class TelaPrincipal extends JFrame {
 		//Painel referente a atualizacao de disciplinas
 		JPanel panelAtualizaDisciplina = new JPanel();
 		tabbedDisciplinas.addTab("Atualizar", null, panelAtualizaDisciplina, null);
+		
+		JLabel lblNewLabel = new JLabel("Digite o código da disciplina");
+		lblNewLabel.setBounds(20, 27, 205, 34);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		
+		JLabel lblNewLabel_1 = new JLabel("Código da disciplina");
+		lblNewLabel_1.setBounds(20, 72, 121, 34);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		
+		textField = new JTextField();
+		textField.setBounds(139, 80, 86, 20);
+		textField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Consultar");
+		btnNewButton.setBounds(235, 79, 89, 23);
+		panelAtualizaDisciplina.setLayout(null);
+		panelAtualizaDisciplina.add(lblNewLabel);
+		panelAtualizaDisciplina.add(lblNewLabel_1);
+		panelAtualizaDisciplina.add(textField);
+		panelAtualizaDisciplina.add(btnNewButton);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(null, "Editar dados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBounds(20, 117, 497, 273);
+		panelAtualizaDisciplina.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 24, 477, 238);
+		panel_1.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Nome da disciplina");
+		lblNewLabel_1_2.setBounds(10, 21, 113, 16);
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panel.add(lblNewLabel_1_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(125, 20, 86, 20);
+		panel.add(textField_1);
+		
+		JLabel lblNewLabel_1_2_1 = new JLabel("Dia da semana");
+		lblNewLabel_1_2_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1_2_1.setBounds(22, 70, 86, 16);
+		panel.add(lblNewLabel_1_2_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(125, 69, 86, 20);
+		panel.add(textField_2);
+		
+		JLabel lblNewLabel_1_2_2 = new JLabel("Horas diárias");
+		lblNewLabel_1_2_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1_2_2.setBounds(258, 21, 86, 16);
+		panel.add(lblNewLabel_1_2_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(354, 20, 86, 20);
+		panel.add(textField_3);
+		
+		JLabel lblNewLabel_1_2_2_1 = new JLabel("Código do curso");
+		lblNewLabel_1_2_2_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1_2_2_1.setBounds(252, 70, 92, 16);
+		panel.add(lblNewLabel_1_2_2_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(354, 69, 86, 20);
+		panel.add(textField_4);
+		
+		JLabel lblNewLabel_1_2_1_1 = new JLabel("Hora inicial");
+		lblNewLabel_1_2_1_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1_2_1_1.setBounds(142, 138, 69, 16);
+		panel.add(lblNewLabel_1_2_1_1);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(214, 137, 86, 20);
+		panel.add(textField_5);
+		
+		JButton btnNewButton_1 = new JButton("Atualizar disciplina");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton_1.setBounds(296, 194, 144, 23);
+		panel.add(btnNewButton_1);
 		
 		//Painel referente a remoção e consulta de disciplinas
 		JPanel panelConsultaDisciplina = new JPanel();
