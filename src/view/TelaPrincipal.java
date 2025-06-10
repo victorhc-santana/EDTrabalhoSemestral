@@ -28,6 +28,12 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfAreaProfAt;
 	private JTextField tfPontuacaoProfAt;
 	private JTextField tfCpfProfessorCr;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
 
 	/**
 	 * Launch the application.
@@ -260,17 +266,55 @@ public class TelaPrincipal extends JFrame {
 		btnAtualizaDisciplina_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panelDisciplinas.add(btnAtualizaDisciplina_1);
 		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(10, 167, 599, 160);
+		panelDisciplinas.add(scrollPane_1);
+		
 		JTextArea taDisciplina = new JTextArea();
-		taDisciplina.setBounds(10, 167, 599, 160);
-		panelDisciplinas.add(taDisciplina);
+		scrollPane_1.setViewportView(taDisciplina);
 		
 		JButton btnCadastroDisciplina = new JButton("Cadastrar Disciplina");
-		btnCadastroDisciplina.setBounds(470, 357, 89, 23);
+		btnCadastroDisciplina.setBounds(470, 357, 139, 23);
 		panelDisciplinas.add(btnCadastroDisciplina);
 		
 		JButton btnBuscaDisciplina = new JButton("Buscar");
 		btnBuscaDisciplina.setBounds(253, 99, 89, 23);
 		panelDisciplinas.add(btnBuscaDisciplina);
+		
+		textField = new JTextField();
+		textField.setBounds(151, 64, 86, 20);
+		panelDisciplinas.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(151, 100, 86, 20);
+		panelDisciplinas.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(151, 139, 86, 20);
+		panelDisciplinas.add(textField_2);
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(473, 64, 86, 20);
+		panelDisciplinas.add(textField_3);
+		textField_3.setColumns(10);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(473, 100, 86, 20);
+		panelDisciplinas.add(textField_4);
+		textField_4.setColumns(10);
+		
+		textField_5 = new JTextField();
+		textField_5.setBounds(473, 139, 86, 20);
+		panelDisciplinas.add(textField_5);
+		textField_5.setColumns(10);
+		
+		JButton btnRemoveDisciplina = new JButton("Remover Disciplina");
+		btnRemoveDisciplina.setBackground(new Color(250, 128, 114));
+		btnRemoveDisciplina.setBounds(28, 359, 121, 23);
+		panelDisciplinas.add(btnRemoveDisciplina);
 		
 		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor);
 		btnCadastroProfessor.addActionListener(pCont);
