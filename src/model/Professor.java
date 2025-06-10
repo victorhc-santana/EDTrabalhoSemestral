@@ -4,19 +4,19 @@ public class Professor {
 	private String nome_professor;
 	private String area_a_inscrever;
 	private int cpf;
-	private double pontuação;
+	private double pontuacao;
 	
 	//Construtor Padrão
 	public Professor() {		
 	}
 	
 	// Construtor completo
-	public Professor(String nome_professor, String area_a_inscrever, int cpf, double pontuação) {
+	public Professor(String nome_professor, String area_a_inscrever, int cpf, double pontuacao) {
 		super();
 		this.nome_professor = nome_professor;
 		this.area_a_inscrever = area_a_inscrever;
 		this.cpf = cpf;
-		this.pontuação = pontuação;
+		this.pontuacao = pontuacao;
 	}
 
 	//Getters e Setters
@@ -44,13 +44,17 @@ public class Professor {
 		this.cpf = cpf;
 	}
 
-	public double getPontuação() {
-		return pontuação;
+	public double getPontuacao() {
+		return pontuacao;
 	}
 
-	public void setPontuação(double pontuação) {
-		this.pontuação = pontuação;
+	public void setPontuacao(double pontuacao) {
+		this.pontuacao = pontuacao;
 	}
 
-	
+	//Configura string para o modelo de csv
+	@Override
+	public String toString() {
+		return nome_professor+";"+area_a_inscrever+cpf+";"+pontuacao;
+	}
 }

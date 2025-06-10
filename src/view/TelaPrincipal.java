@@ -5,16 +5,23 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controller.ControllerProfessor;
+
 import javax.swing.JTabbedPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class TelaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField tfNomeProfessor;
+	private JTextField tfCpfProfessor;
+	private JTextField tfAreaProfessor;
+	private JTextField tfPontuacaoProfessor;
 
 	/**
 	 * Launch the application.
@@ -91,19 +98,50 @@ public class TelaPrincipal extends JFrame {
 		tabbedProfessor.addTab("Inserir", null, panelCadastroProfessor, null);
 		panelCadastroProfessor.setLayout(null);
 		
-		JButton btnNewButton_3 = new JButton("New button");
-		btnNewButton_3.setBounds(209, 299, 89, 23);
-		panelCadastroProfessor.add(btnNewButton_3);
+		JButton btnCadastroProfessor = new JButton("Cadastrar Professor");
+		btnCadastroProfessor.setBounds(207, 301, 129, 23);
+		panelCadastroProfessor.add(btnCadastroProfessor);
 		
-		textField = new JTextField();
-		textField.setBounds(119, 113, 86, 20);
-		panelCadastroProfessor.add(textField);
-		textField.setColumns(10);
+		tfNomeProfessor = new JTextField();
+		tfNomeProfessor.setBounds(119, 113, 86, 20);
+		panelCadastroProfessor.add(tfNomeProfessor);
+		tfNomeProfessor.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(119, 172, 86, 20);
-		panelCadastroProfessor.add(textField_1);
-		textField_1.setColumns(10);
+		tfCpfProfessor = new JTextField();
+		tfCpfProfessor.setBounds(119, 172, 86, 20);
+		panelCadastroProfessor.add(tfCpfProfessor);
+		tfCpfProfessor.setColumns(10);
+		
+		tfAreaProfessor = new JTextField();
+		tfAreaProfessor.setBounds(386, 113, 86, 20);
+		panelCadastroProfessor.add(tfAreaProfessor);
+		tfAreaProfessor.setColumns(10);
+		
+		tfPontuacaoProfessor = new JTextField();
+		tfPontuacaoProfessor.setBounds(386, 172, 86, 20);
+		panelCadastroProfessor.add(tfPontuacaoProfessor);
+		tfPontuacaoProfessor.setColumns(10);
+		
+		JLabel lblNomeProfessor = new JLabel("Nome do Professor");
+		lblNomeProfessor.setBounds(10, 116, 99, 14);
+		panelCadastroProfessor.add(lblNomeProfessor);
+		
+		JLabel lblCpfProfessor = new JLabel("CPF do Professor");
+		lblCpfProfessor.setBounds(10, 175, 99, 14);
+		panelCadastroProfessor.add(lblCpfProfessor);
+		
+		JLabel lblArea = new JLabel("Area de conhecimento");
+		lblArea.setBounds(260, 116, 116, 14);
+		panelCadastroProfessor.add(lblArea);
+		
+		JLabel lblPontuacao = new JLabel("Pontuacao do professor");
+		lblPontuacao.setBounds(260, 175, 116, 14);
+		panelCadastroProfessor.add(lblPontuacao);
+		
+		JLabel lblCadastroProfessor = new JLabel("Cadastro de Professor");
+		lblCadastroProfessor.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCadastroProfessor.setBounds(10, 41, 532, 14);
+		panelCadastroProfessor.add(lblCadastroProfessor);
 				
 		//Painel referente a atualizacao de Professor
 		JPanel panelAtualizaProfessor = new JPanel();
@@ -140,5 +178,7 @@ public class TelaPrincipal extends JFrame {
 		JPanel panelProcessos = new JPanel();
 		tabbedClasse.addTab("Processos", null, panelProcessos, null);
 		
+		ControllerProfessor pCont = new ControllerProfessor(tfAreaProfessor, tfAreaProfessor, tfAreaProfessor, tfAreaProfessor);
+		btnCadastroProfessor.addActionListener(pCont);
 	}
 }
