@@ -28,12 +28,12 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfAreaProfAt;
 	private JTextField tfPontuacaoProfAt;
 	private JTextField tfCpfProfessorCr;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField tfNomeDisciplina;
+	private JTextField tfCodigoDisciplina;
+	private JTextField tfDiaSemanaDisciplina;
+	private JTextField tfHorasDiariasDisciplina;
+	private JTextField tfCodigoCursoDisciplina;
+	private JTextField tfHoraInicialDisciplina;
 
 	/**
 	 * Launch the application.
@@ -231,40 +231,40 @@ public class TelaPrincipal extends JFrame {
 		tabbedClasse.addTab("Disciplinas", null, panelDisciplinas, null);
 		panelDisciplinas.setLayout(null);
 		
-		JLabel lblCodDisciplinaA_1 = new JLabel("Código da disciplina");
-		lblCodDisciplinaA_1.setBounds(28, 92, 121, 34);
-		lblCodDisciplinaA_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panelDisciplinas.add(lblCodDisciplinaA_1);
+		JLabel lblCodDisciplina = new JLabel("Código da disciplina");
+		lblCodDisciplina.setBounds(28, 92, 121, 34);
+		lblCodDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblCodDisciplina);
 		
-		JLabel lblNomeDiscAt_1 = new JLabel("Nome da disciplina");
-		lblNomeDiscAt_1.setBounds(28, 65, 113, 16);
-		lblNomeDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panelDisciplinas.add(lblNomeDiscAt_1);
+		JLabel lblNomeDisciplina = new JLabel("Nome da disciplina");
+		lblNomeDisciplina.setBounds(28, 65, 113, 16);
+		lblNomeDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblNomeDisciplina);
 		
-		JLabel lblDiaSemanaDiscAt_1 = new JLabel("Dia da semana");
-		lblDiaSemanaDiscAt_1.setBounds(28, 140, 86, 16);
-		lblDiaSemanaDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panelDisciplinas.add(lblDiaSemanaDiscAt_1);
+		JLabel lblDiaSemanaDisciplina = new JLabel("Dia da semana");
+		lblDiaSemanaDisciplina.setBounds(28, 140, 86, 16);
+		lblDiaSemanaDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblDiaSemanaDisciplina);
 		
-		JLabel lblHorasDiaDiscAt_1 = new JLabel("Horas diárias");
-		lblHorasDiaDiscAt_1.setBounds(374, 67, 86, 16);
-		lblHorasDiaDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panelDisciplinas.add(lblHorasDiaDiscAt_1);
+		JLabel lblHorasDiaDisciplina = new JLabel("Horas diárias");
+		lblHorasDiaDisciplina.setBounds(374, 67, 86, 16);
+		lblHorasDiaDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblHorasDiaDisciplina);
 		
-		JLabel lblCodCursoDiscAt_1 = new JLabel("Código do curso");
-		lblCodCursoDiscAt_1.setBounds(374, 103, 92, 16);
-		lblCodCursoDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panelDisciplinas.add(lblCodCursoDiscAt_1);
+		JLabel lblCodCursoDisciplina = new JLabel("Código do curso");
+		lblCodCursoDisciplina.setBounds(374, 103, 92, 16);
+		lblCodCursoDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblCodCursoDisciplina);
 		
-		JLabel lblHoraInicialDiscAt_1 = new JLabel("Hora inicial");
-		lblHoraInicialDiscAt_1.setBounds(374, 142, 69, 16);
-		lblHoraInicialDiscAt_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panelDisciplinas.add(lblHoraInicialDiscAt_1);
+		JLabel lblHoraInicialDisciplina = new JLabel("Hora inicial");
+		lblHoraInicialDisciplina.setBounds(374, 142, 69, 16);
+		lblHoraInicialDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelDisciplinas.add(lblHoraInicialDisciplina);
 		
-		JButton btnAtualizaDisciplina_1 = new JButton("Atualizar disciplina");
-		btnAtualizaDisciplina_1.setBounds(316, 357, 144, 23);
-		btnAtualizaDisciplina_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panelDisciplinas.add(btnAtualizaDisciplina_1);
+		JButton btnAtualizaDisciplina = new JButton("Atualizar disciplina");
+		btnAtualizaDisciplina.setBounds(316, 357, 144, 23);
+		btnAtualizaDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelDisciplinas.add(btnAtualizaDisciplina);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(10, 167, 599, 160);
@@ -281,35 +281,35 @@ public class TelaPrincipal extends JFrame {
 		btnBuscaDisciplina.setBounds(253, 99, 89, 23);
 		panelDisciplinas.add(btnBuscaDisciplina);
 		
-		textField = new JTextField();
-		textField.setBounds(151, 64, 86, 20);
-		panelDisciplinas.add(textField);
-		textField.setColumns(10);
+		tfNomeDisciplina = new JTextField();
+		tfNomeDisciplina.setBounds(151, 64, 86, 20);
+		panelDisciplinas.add(tfNomeDisciplina);
+		tfNomeDisciplina.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(151, 100, 86, 20);
-		panelDisciplinas.add(textField_1);
-		textField_1.setColumns(10);
+		tfCodigoDisciplina = new JTextField();
+		tfCodigoDisciplina.setBounds(151, 100, 86, 20);
+		panelDisciplinas.add(tfCodigoDisciplina);
+		tfCodigoDisciplina.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(151, 139, 86, 20);
-		panelDisciplinas.add(textField_2);
-		textField_2.setColumns(10);
+		tfDiaSemanaDisciplina = new JTextField();
+		tfDiaSemanaDisciplina.setBounds(151, 139, 86, 20);
+		panelDisciplinas.add(tfDiaSemanaDisciplina);
+		tfDiaSemanaDisciplina.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(473, 64, 86, 20);
-		panelDisciplinas.add(textField_3);
-		textField_3.setColumns(10);
+		tfHorasDiariasDisciplina = new JTextField();
+		tfHorasDiariasDisciplina.setBounds(473, 64, 86, 20);
+		panelDisciplinas.add(tfHorasDiariasDisciplina);
+		tfHorasDiariasDisciplina.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(473, 100, 86, 20);
-		panelDisciplinas.add(textField_4);
-		textField_4.setColumns(10);
+		tfCodigoCursoDisciplina = new JTextField();
+		tfCodigoCursoDisciplina.setBounds(473, 100, 86, 20);
+		panelDisciplinas.add(tfCodigoCursoDisciplina);
+		tfCodigoCursoDisciplina.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(473, 139, 86, 20);
-		panelDisciplinas.add(textField_5);
-		textField_5.setColumns(10);
+		tfHoraInicialDisciplina = new JTextField();
+		tfHoraInicialDisciplina.setBounds(473, 139, 86, 20);
+		panelDisciplinas.add(tfHoraInicialDisciplina);
+		tfHoraInicialDisciplina.setColumns(10);
 		
 		JButton btnRemoveDisciplina = new JButton("Remover Disciplina");
 		btnRemoveDisciplina.setBackground(new Color(250, 128, 114));
