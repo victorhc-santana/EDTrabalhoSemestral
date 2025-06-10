@@ -1,17 +1,16 @@
 package view;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import controller.ControllerProfessor;
-
 import javax.swing.JTabbedPane;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.border.TitledBorder;
 import javax.swing.SwingConstants;
 
 public class TelaPrincipal extends JFrame {
@@ -22,6 +21,12 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfCpfProfessor;
 	private JTextField tfAreaProfessor;
 	private JTextField tfPontuacaoProfessor;
+	private JTextField tfCodigoDisciplinaAt;
+	private JTextField tfNomeDiscAt;
+	private JTextField tfDiaSemanaDiscAt;
+	private JTextField tfHorasDiaDiscAt;
+	private JTextField tfCodCursoDiscAt;
+	private JTextField tfHoraInicialDiscAt;
 
 	/**
 	 * Launch the application.
@@ -68,6 +73,92 @@ public class TelaPrincipal extends JFrame {
 		//Painel referente a atualizacao de disciplinas
 		JPanel panelAtualizaDisciplina = new JPanel();
 		tabbedDisciplinas.addTab("Atualizar", null, panelAtualizaDisciplina, null);
+		
+		JLabel lblGuiaCodDisc = new JLabel("Digite o código da disciplina");
+		lblGuiaCodDisc.setBounds(20, 27, 205, 34);
+		lblGuiaCodDisc.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		
+		JLabel lblCodDisciplinaA = new JLabel("Código da disciplina");
+		lblCodDisciplinaA.setBounds(20, 72, 121, 34);
+		lblCodDisciplinaA.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		
+		tfCodigoDisciplinaAt = new JTextField();
+		tfCodigoDisciplinaAt.setBounds(139, 80, 86, 20);
+		tfCodigoDisciplinaAt.setColumns(10);
+		
+		JButton btnConsultarAt = new JButton("Consultar");
+		btnConsultarAt.setBounds(235, 79, 89, 23);
+		panelAtualizaDisciplina.setLayout(null);
+		panelAtualizaDisciplina.add(lblGuiaCodDisc);
+		panelAtualizaDisciplina.add(lblCodDisciplinaA);
+		panelAtualizaDisciplina.add(tfCodigoDisciplinaAt);
+		panelAtualizaDisciplina.add(btnConsultarAt);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(null, "Editar dados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBounds(20, 117, 497, 273);
+		panelAtualizaDisciplina.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 24, 477, 238);
+		panel_1.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNomeDiscAt = new JLabel("Nome da disciplina");
+		lblNomeDiscAt.setBounds(10, 21, 113, 16);
+		lblNomeDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panel.add(lblNomeDiscAt);
+		
+		tfNomeDiscAt = new JTextField();
+		tfNomeDiscAt.setColumns(10);
+		tfNomeDiscAt.setBounds(125, 20, 86, 20);
+		panel.add(tfNomeDiscAt);
+		
+		JLabel lblDiaSemanaDiscAt = new JLabel("Dia da semana");
+		lblDiaSemanaDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblDiaSemanaDiscAt.setBounds(22, 70, 86, 16);
+		panel.add(lblDiaSemanaDiscAt);
+		
+		tfDiaSemanaDiscAt = new JTextField();
+		tfDiaSemanaDiscAt.setColumns(10);
+		tfDiaSemanaDiscAt.setBounds(125, 69, 86, 20);
+		panel.add(tfDiaSemanaDiscAt);
+		
+		JLabel lblHorasDiaDiscAt = new JLabel("Horas diárias");
+		lblHorasDiaDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblHorasDiaDiscAt.setBounds(258, 21, 86, 16);
+		panel.add(lblHorasDiaDiscAt);
+		
+		tfHorasDiaDiscAt = new JTextField();
+		tfHorasDiaDiscAt.setColumns(10);
+		tfHorasDiaDiscAt.setBounds(354, 20, 86, 20);
+		panel.add(tfHorasDiaDiscAt);
+		
+		JLabel lblCodCursoDiscAt = new JLabel("Código do curso");
+		lblCodCursoDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblCodCursoDiscAt.setBounds(252, 70, 92, 16);
+		panel.add(lblCodCursoDiscAt);
+		
+		tfCodCursoDiscAt = new JTextField();
+		tfCodCursoDiscAt.setColumns(10);
+		tfCodCursoDiscAt.setBounds(354, 69, 86, 20);
+		panel.add(tfCodCursoDiscAt);
+		
+		JLabel lblHoraInicialDiscAt = new JLabel("Hora inicial");
+		lblHoraInicialDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblHoraInicialDiscAt.setBounds(142, 138, 69, 16);
+		panel.add(lblHoraInicialDiscAt);
+		
+		tfHoraInicialDiscAt = new JTextField();
+		tfHoraInicialDiscAt.setColumns(10);
+		tfHoraInicialDiscAt.setBounds(214, 137, 86, 20);
+		panel.add(tfHoraInicialDiscAt);
+		
+		JButton btnAtualizaDisciplina = new JButton("Atualizar disciplina");
+		btnAtualizaDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAtualizaDisciplina.setBounds(296, 194, 144, 23);
+		panel.add(btnAtualizaDisciplina);
 		
 		//Painel referente a remoção e consulta de disciplinas
 		JPanel panelConsultaDisciplina = new JPanel();
