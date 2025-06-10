@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
+<<<<<<< HEAD
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -16,6 +17,10 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.GridLayout;
 import javax.swing.border.TitledBorder;
+=======
+import javax.swing.JButton;
+import javax.swing.JTextField;
+>>>>>>> branch 'master' of https://github.com/victorhc-santana/EDTrabalhoSemestral.git
 
 public class TelaPrincipal extends JFrame {
 
@@ -23,10 +28,13 @@ public class TelaPrincipal extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+<<<<<<< HEAD
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+=======
+>>>>>>> branch 'master' of https://github.com/victorhc-santana/EDTrabalhoSemestral.git
 
 	/**
 	 * Launch the application.
@@ -187,6 +195,21 @@ public class TelaPrincipal extends JFrame {
 		//Painel referente ao cadastro de Professor
 		JPanel panelCadastroProfessor = new JPanel();
 		tabbedProfessor.addTab("Inserir", null, panelCadastroProfessor, null);
+		panelCadastroProfessor.setLayout(null);
+		
+		JButton btnNewButton_3 = new JButton("New button");
+		btnNewButton_3.setBounds(209, 299, 89, 23);
+		panelCadastroProfessor.add(btnNewButton_3);
+		
+		textField = new JTextField();
+		textField.setBounds(119, 113, 86, 20);
+		panelCadastroProfessor.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(119, 172, 86, 20);
+		panelCadastroProfessor.add(textField_1);
+		textField_1.setColumns(10);
 				
 		//Painel referente a atualizacao de Professor
 		JPanel panelAtualizaProfessor = new JPanel();
@@ -203,6 +226,9 @@ public class TelaPrincipal extends JFrame {
 		//Painel referente ao cadastro de Inscricao
 		JPanel panelCadastroInscricao = new JPanel();
 		tabbedInscricao.addTab("Inserir", null, panelCadastroInscricao, null);
+		
+		JButton button = new JButton("New button");
+		panelCadastroInscricao.add(button);
 						
 		//Painel referente a atualizacao de Inscricao
 		JPanel panelAtualizaInscricao = new JPanel();
