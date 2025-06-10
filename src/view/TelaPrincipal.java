@@ -12,6 +12,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 import javax.swing.SwingConstants;
+import javax.swing.JTextArea;
+import java.awt.Color;
+import javax.swing.JScrollPane;
 
 public class TelaPrincipal extends JFrame {
 
@@ -27,6 +30,11 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfHorasDiaDiscAt;
 	private JTextField tfCodCursoDiscAt;
 	private JTextField tfHoraInicialDiscAt;
+	private JTextField tfCpfProfessorAt;
+	private JTextField tfNomeProfAt;
+	private JTextField tfAreaProfAt;
+	private JTextField tfPontuacaoProfAt;
+	private JTextField tfCpfProfessorCr;
 
 	/**
 	 * Launch the application.
@@ -86,79 +94,79 @@ public class TelaPrincipal extends JFrame {
 		tfCodigoDisciplinaAt.setBounds(139, 80, 86, 20);
 		tfCodigoDisciplinaAt.setColumns(10);
 		
-		JButton btnConsultarAt = new JButton("Consultar");
-		btnConsultarAt.setBounds(235, 79, 89, 23);
+		JButton btnBuscarAt = new JButton("Buscar");
+		btnBuscarAt.setBounds(235, 79, 89, 23);
 		panelAtualizaDisciplina.setLayout(null);
 		panelAtualizaDisciplina.add(lblGuiaCodDisc);
 		panelAtualizaDisciplina.add(lblCodDisciplinaA);
 		panelAtualizaDisciplina.add(tfCodigoDisciplinaAt);
-		panelAtualizaDisciplina.add(btnConsultarAt);
+		panelAtualizaDisciplina.add(btnBuscarAt);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Editar dados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(20, 117, 497, 273);
-		panelAtualizaDisciplina.add(panel_1);
-		panel_1.setLayout(null);
+		JPanel panelEditDadosDisc = new JPanel();
+		panelEditDadosDisc.setBorder(new TitledBorder(null, "Editar dados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelEditDadosDisc.setBounds(20, 117, 497, 273);
+		panelAtualizaDisciplina.add(panelEditDadosDisc);
+		panelEditDadosDisc.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 24, 477, 238);
-		panel_1.add(panel);
-		panel.setLayout(null);
+		JPanel panelDadosDisciplinas = new JPanel();
+		panelDadosDisciplinas.setBounds(10, 24, 477, 238);
+		panelEditDadosDisc.add(panelDadosDisciplinas);
+		panelDadosDisciplinas.setLayout(null);
 		
 		JLabel lblNomeDiscAt = new JLabel("Nome da disciplina");
 		lblNomeDiscAt.setBounds(10, 21, 113, 16);
 		lblNomeDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panel.add(lblNomeDiscAt);
+		panelDadosDisciplinas.add(lblNomeDiscAt);
 		
 		tfNomeDiscAt = new JTextField();
 		tfNomeDiscAt.setColumns(10);
 		tfNomeDiscAt.setBounds(125, 20, 86, 20);
-		panel.add(tfNomeDiscAt);
+		panelDadosDisciplinas.add(tfNomeDiscAt);
 		
 		JLabel lblDiaSemanaDiscAt = new JLabel("Dia da semana");
 		lblDiaSemanaDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblDiaSemanaDiscAt.setBounds(22, 70, 86, 16);
-		panel.add(lblDiaSemanaDiscAt);
+		panelDadosDisciplinas.add(lblDiaSemanaDiscAt);
 		
 		tfDiaSemanaDiscAt = new JTextField();
 		tfDiaSemanaDiscAt.setColumns(10);
 		tfDiaSemanaDiscAt.setBounds(125, 69, 86, 20);
-		panel.add(tfDiaSemanaDiscAt);
+		panelDadosDisciplinas.add(tfDiaSemanaDiscAt);
 		
 		JLabel lblHorasDiaDiscAt = new JLabel("Horas diárias");
 		lblHorasDiaDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblHorasDiaDiscAt.setBounds(258, 21, 86, 16);
-		panel.add(lblHorasDiaDiscAt);
+		panelDadosDisciplinas.add(lblHorasDiaDiscAt);
 		
 		tfHorasDiaDiscAt = new JTextField();
 		tfHorasDiaDiscAt.setColumns(10);
 		tfHorasDiaDiscAt.setBounds(354, 20, 86, 20);
-		panel.add(tfHorasDiaDiscAt);
+		panelDadosDisciplinas.add(tfHorasDiaDiscAt);
 		
 		JLabel lblCodCursoDiscAt = new JLabel("Código do curso");
 		lblCodCursoDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblCodCursoDiscAt.setBounds(252, 70, 92, 16);
-		panel.add(lblCodCursoDiscAt);
+		panelDadosDisciplinas.add(lblCodCursoDiscAt);
 		
 		tfCodCursoDiscAt = new JTextField();
 		tfCodCursoDiscAt.setColumns(10);
 		tfCodCursoDiscAt.setBounds(354, 69, 86, 20);
-		panel.add(tfCodCursoDiscAt);
+		panelDadosDisciplinas.add(tfCodCursoDiscAt);
 		
 		JLabel lblHoraInicialDiscAt = new JLabel("Hora inicial");
 		lblHoraInicialDiscAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblHoraInicialDiscAt.setBounds(142, 138, 69, 16);
-		panel.add(lblHoraInicialDiscAt);
+		panelDadosDisciplinas.add(lblHoraInicialDiscAt);
 		
 		tfHoraInicialDiscAt = new JTextField();
 		tfHoraInicialDiscAt.setColumns(10);
 		tfHoraInicialDiscAt.setBounds(214, 137, 86, 20);
-		panel.add(tfHoraInicialDiscAt);
+		panelDadosDisciplinas.add(tfHoraInicialDiscAt);
 		
 		JButton btnAtualizaDisciplina = new JButton("Atualizar disciplina");
 		btnAtualizaDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnAtualizaDisciplina.setBounds(296, 194, 144, 23);
-		panel.add(btnAtualizaDisciplina);
+		panelDadosDisciplinas.add(btnAtualizaDisciplina);
 		
 		//Painel referente a remoção e consulta de disciplinas
 		JPanel panelConsultaDisciplina = new JPanel();
@@ -237,10 +245,103 @@ public class TelaPrincipal extends JFrame {
 		//Painel referente a atualizacao de Professor
 		JPanel panelAtualizaProfessor = new JPanel();
 		tabbedProfessor.addTab("Atualizar", null, panelAtualizaProfessor, null);
+		panelAtualizaProfessor.setLayout(null);
+		
+		JLabel lblGuiaCpfProfAt = new JLabel("Digite o cpf do professor");
+		lblGuiaCpfProfAt.setBounds(59, 5, 199, 20);
+		lblGuiaCpfProfAt.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panelAtualizaProfessor.add(lblGuiaCpfProfAt);
+		
+		JLabel lblCpfProfessorAt = new JLabel("Cpf do Professor");
+		lblCpfProfessorAt.setBounds(10, 91, 113, 16);
+		lblCpfProfessorAt.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelAtualizaProfessor.add(lblCpfProfessorAt);
+		
+		tfCpfProfessorAt = new JTextField();
+		tfCpfProfessorAt.setBounds(121, 90, 86, 20);
+		tfCpfProfessorAt.setColumns(10);
+		panelAtualizaProfessor.add(tfCpfProfessorAt);
+		
+		JPanel panelEditaDadoProfAt = new JPanel();
+		panelEditaDadoProfAt.setBounds(23, 142, 519, 255);
+		panelAtualizaProfessor.add(panelEditaDadoProfAt);
+		panelEditaDadoProfAt.setLayout(null);
+		
+		JPanel panelDadosProfAt = new JPanel();
+		panelDadosProfAt.setBounds(10, 5, 499, 239);
+		panelEditaDadoProfAt.add(panelDadosProfAt);
+		panelDadosProfAt.setLayout(null);
+		
+		JLabel lblNomeProfAt = new JLabel("New label");
+		lblNomeProfAt.setBounds(43, 79, 46, 14);
+		panelDadosProfAt.add(lblNomeProfAt);
+		
+		JLabel lblAreaProfAt = new JLabel("New label");
+		lblAreaProfAt.setBounds(305, 79, 46, 14);
+		panelDadosProfAt.add(lblAreaProfAt);
+		
+		JLabel lblPontuacaoProfAt = new JLabel("New label");
+		lblPontuacaoProfAt.setBounds(145, 165, 46, 14);
+		panelDadosProfAt.add(lblPontuacaoProfAt);
+		
+		tfNomeProfAt = new JTextField();
+		tfNomeProfAt.setBounds(105, 76, 86, 20);
+		panelDadosProfAt.add(tfNomeProfAt);
+		tfNomeProfAt.setColumns(10);
+		
+		tfAreaProfAt = new JTextField();
+		tfAreaProfAt.setBounds(361, 76, 86, 20);
+		panelDadosProfAt.add(tfAreaProfAt);
+		tfAreaProfAt.setColumns(10);
+		
+		tfPontuacaoProfAt = new JTextField();
+		tfPontuacaoProfAt.setBounds(228, 162, 86, 20);
+		panelDadosProfAt.add(tfPontuacaoProfAt);
+		tfPontuacaoProfAt.setColumns(10);
+		
+		JButton btnAtualizaProf = new JButton("Atualizar Professor");
+		btnAtualizaProf.setBounds(361, 205, 89, 23);
+		panelDadosProfAt.add(btnAtualizaProf);
+		
+		JButton btnBuscaProfessor = new JButton("Buscar");
+		btnBuscaProfessor.setBounds(217, 89, 89, 23);
+		panelAtualizaProfessor.add(btnBuscaProfessor);
 				
 		//Painel referente a remoção e consulta de Professor
 		JPanel panelConsultaProfessor = new JPanel();
 		tabbedProfessor.addTab("Consultar", null, panelConsultaProfessor, null);		
+		panelConsultaProfessor.setLayout(null);
+		
+		JLabel lblGuiaCpfProfCr = new JLabel("Digite o cpf do professor");
+		lblGuiaCpfProfCr.setBounds(188, 5, 175, 20);
+		lblGuiaCpfProfCr.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panelConsultaProfessor.add(lblGuiaCpfProfCr);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(37, 149, 486, 185);
+		panelConsultaProfessor.add(scrollPane);
+		
+		JTextArea taDadosProfCr = new JTextArea();
+		scrollPane.setViewportView(taDadosProfCr);
+		
+		JLabel lblCpfProfessorCr = new JLabel("Cpf do Professor");
+		lblCpfProfessorCr.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblCpfProfessorCr.setBounds(36, 102, 113, 16);
+		panelConsultaProfessor.add(lblCpfProfessorCr);
+		
+		tfCpfProfessorCr = new JTextField();
+		tfCpfProfessorCr.setColumns(10);
+		tfCpfProfessorCr.setBounds(139, 101, 86, 20);
+		panelConsultaProfessor.add(tfCpfProfessorCr);
+		
+		JButton btnConsultaProf = new JButton("Consultar");
+		btnConsultaProf.setBounds(245, 100, 89, 23);
+		panelConsultaProfessor.add(btnConsultaProf);
+		
+		JButton btnRemoveProfessor = new JButton("Remover Professor");
+		btnRemoveProfessor.setBackground(new Color(250, 128, 114));
+		btnRemoveProfessor.setBounds(398, 345, 89, 23);
+		panelConsultaProfessor.add(btnRemoveProfessor);
 		
 		//Inicia aba para o CRUD de Inscricao
 		JTabbedPane tabbedInscricao = new JTabbedPane(JTabbedPane.LEFT);
@@ -269,7 +370,7 @@ public class TelaPrincipal extends JFrame {
 		JPanel panelProcessos = new JPanel();
 		tabbedClasse.addTab("Processos", null, panelProcessos, null);
 		
-		ControllerProfessor pCont = new ControllerProfessor(tfAreaProfessor, tfAreaProfessor, tfAreaProfessor, tfAreaProfessor);
+		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor);
 		btnCadastroProfessor.addActionListener(pCont);
 	}
 }

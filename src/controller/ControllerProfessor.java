@@ -42,8 +42,8 @@ public class ControllerProfessor implements ActionListener{
 	private void cadastroprofessor() {
 		Professor prof = new Professor();
 		prof.setNome_professor(tfNomeProfessor.getText());
-		prof.setCpf(Integer.parseInt(tfCpfProfessor.getText()));
 		prof.setArea_a_inscrever(tfAreaProfessor.getText());
+		prof.setCpf(Integer.parseInt(tfCpfProfessor.getText()));
 		prof.setPontuacao(Double.parseDouble(tfPontuacaoProfessor.getText()));
 		System.out.println(prof);
 	}
@@ -54,7 +54,10 @@ public class ControllerProfessor implements ActionListener{
 	}
 	
 	private void consultaprofessor() {
-		// TODO Auto-generated method stub
+		Professor prof = new Professor();
+		prof.setCpf(Integer.parseInt(tfCpfProfessor.getText()));
+		
+		System.out.println(prof);
 		
 	}
 	

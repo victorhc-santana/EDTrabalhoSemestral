@@ -55,6 +55,6 @@ public class Professor {
 	//Configura string para o modelo de csv
 	@Override
 	public String toString() {
-		return nome_professor+";"+area_a_inscrever+cpf+";"+pontuacao;
+		return nome_professor+";"+area_a_inscrever+";"+cpf+";"+pontuacao;
 	}
 }
