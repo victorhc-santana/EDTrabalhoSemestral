@@ -80,6 +80,18 @@ public class TelaPrincipal extends JFrame {
 		tabbedClasse.addTab("Disciplinas", null, tabDisciplinas, null);
 		tabDisciplinas.setLayout(null);
 		
+		JPanel tabProfessor = new JPanel();
+		tabbedClasse.addTab("Professor", null, tabProfessor, null);
+		tabProfessor.setLayout(null);
+		
+		JPanel tabCurso = new JPanel();
+		tabbedClasse.addTab("Curso", null, tabCurso, null);
+		tabCurso.setLayout(null);
+		
+		JPanel tabInscricao = new JPanel();
+		tabbedClasse.addTab("Inscrição", null, tabInscricao, null);
+		tabInscricao.setLayout(null);
+		
 		JLabel lblCodDisciplina = new JLabel("Código da disciplina");
 		lblCodDisciplina.setBounds(28, 92, 121, 34);
 		lblCodDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -164,14 +176,6 @@ public class TelaPrincipal extends JFrame {
 		btnRemoveDisciplina.setBackground(new Color(250, 128, 114));
 		btnRemoveDisciplina.setBounds(28, 359, 121, 23);
 		tabDisciplinas.add(btnRemoveDisciplina);
-		//fim-tab referente a disciplina
-		
-		//-----------------------------------
-		
-		//inicio-tab referente a Cursos
-		JPanel tabCurso = new JPanel();
-		tabbedClasse.addTab("Curso", null, tabCurso, null);
-		tabCurso.setLayout(null);
 		
 		JLabel lblCodigoCurso = new JLabel("Código do Curso");
 		lblCodigoCurso.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -236,15 +240,6 @@ public class TelaPrincipal extends JFrame {
 		btnBuscaCurso.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnBuscaCurso.setBounds(382, 90, 85, 21);
 		tabCurso.add(btnBuscaCurso);
-		//fim-tab referente a Cursos
-		
-		//-----------------------------------
-						
-		//inicio-tab referente a Inscrição		
-		JPanel tabInscricao = new JPanel();
-		tabbedClasse.addTab("Inscrição", null, tabInscricao, null);
-		tabInscricao.setLayout(null);
-
 		
 		JLabel lblCurso = new JLabel("Código Curso");
 		lblCurso.setBounds(48, 51, 103, 13);
@@ -301,11 +296,7 @@ public class TelaPrincipal extends JFrame {
 		JButton btnRemoveInscricao = new JButton("Remover Inscrição");
 		btnRemoveInscricao.setBounds(20, 393, 117, 21);
 		tabInscricao.add(btnRemoveInscricao);
-		//fim-tab referente a Inscrição
-		
-		//-----------------------------------
-						
-		//inicio-tab referente a Professor
+
 		JButton btnInscreverProfessor = new JButton("Inscrever Professor");
 		btnInscreverProfessor.setBounds(463, 392, 146, 21);
 		tabInscricao.add(btnInscreverProfessor);
@@ -317,10 +308,6 @@ public class TelaPrincipal extends JFrame {
 		});
 		btnAtualizaInscricao.setBounds(327, 392, 126, 21);
 		tabInscricao.add(btnAtualizaInscricao);
-		
-		JPanel tabProfessor = new JPanel();
-		tabbedClasse.addTab("Professor", null, tabProfessor, null);
-		tabProfessor.setLayout(null);
 		
 		JLabel lblNomeProfessor = new JLabel("Nome do Professor");
 		lblNomeProfessor.setBounds(26, 60, 99, 14);
@@ -381,15 +368,7 @@ public class TelaPrincipal extends JFrame {
 		tfPontuacaoProfessor.setBounds(490, 68, 86, 20);
 		tabProfessor.add(tfPontuacaoProfessor);
 		tfPontuacaoProfessor.setColumns(10);
-		
-		//fim-tab referente a Professores
-		
-		//-----------------------------------
-		
-		//Controladores
-		
-		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor);
-		
+
 		tfCodigoCurso = new JTextField();
 		tfCodigoCurso.setBounds(222, 49, 96, 19);
 		tabCurso.add(tfCodigoCurso);
@@ -431,6 +410,7 @@ public class TelaPrincipal extends JFrame {
 		btnAtualizaInscricao.setBounds(327, 392, 126, 21);
 		tabInscricao.add(btnAtualizaInscricao);
 		
+		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor);
 		btnCadastroProfessor.addActionListener(pCont);
 		btnAtualizaProfessor.addActionListener(pCont);
 		btnRemoveProfessor.addActionListener(pCont);
