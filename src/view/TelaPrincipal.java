@@ -32,8 +32,11 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfAreaConhecimento;
 	private JTextField taCodCurso;
 	private JTextField taCodDisciplina;
+	private JTextField tfCodigoDisciplinaIns;
 	private JTextField taCodProfessor;
+	private JTextField tfCodigoProfessorIns;
 	private JTextField taCodProcesso;
+	private JTextField tfCodigoProcessoIns;
 
 	private JTextField tfNomeProfessor;
 	private JTextField tfCpfProfessor;
@@ -261,25 +264,20 @@ public class TelaPrincipal extends JFrame {
 		lblCodProcesso.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		tabInscricao.add(lblCodProcesso);
 		
-		taCodCurso = new JTextField();
-		taCodCurso.setBounds(240, 50, 96, 19);
-		tabInscricao.add(taCodCurso);
-		taCodCurso.setColumns(10);
+		tfCodigoDisciplinaIns = new JTextField();
+		tfCodigoDisciplinaIns.setBounds(240, 92, 96, 19);
+		tabInscricao.add(tfCodigoDisciplinaIns);
+		tfCodigoDisciplinaIns.setColumns(10);
 		
-		taCodDisciplina = new JTextField();
-		taCodDisciplina.setBounds(240, 92, 96, 19);
-		tabInscricao.add(taCodDisciplina);
-		taCodDisciplina.setColumns(10);
+		tfCodigoProfessorIns = new JTextField();
+		tfCodigoProfessorIns.setBounds(240, 137, 96, 19);
+		tabInscricao.add(tfCodigoProfessorIns);
+		tfCodigoProfessorIns.setColumns(10);
 		
-		taCodProfessor = new JTextField();
-		taCodProfessor.setBounds(240, 137, 96, 19);
-		tabInscricao.add(taCodProfessor);
-		taCodProfessor.setColumns(10);
-		
-		taCodProcesso = new JTextField();
-		taCodProcesso.setBounds(240, 180, 96, 19);
-		tabInscricao.add(taCodProcesso);
-		taCodProcesso.setColumns(10);
+		tfCodigoProcessoIns = new JTextField();
+		tfCodigoProcessoIns.setBounds(240, 180, 96, 19);
+		tabInscricao.add(tfCodigoProcessoIns);
+		tfCodigoProcessoIns.setColumns(10);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(10, 221, 599, 161);
@@ -386,26 +384,6 @@ public class TelaPrincipal extends JFrame {
 
 		btnCadastraCurso.setBounds(477, 383, 119, 21);
 		tabCurso.add(btnCadastraCurso);
-		
-		taCodCurso = new JTextField();
-		taCodCurso.setBounds(240, 50, 96, 19);
-		tabInscricao.add(taCodCurso);
-		taCodCurso.setColumns(10);
-		
-		taCodDisciplina = new JTextField();
-		taCodDisciplina.setBounds(240, 92, 96, 19);
-		tabInscricao.add(taCodDisciplina);
-		taCodDisciplina.setColumns(10);
-		
-		taCodProfessor = new JTextField();
-		taCodProfessor.setBounds(240, 137, 96, 19);
-		tabInscricao.add(taCodProfessor);
-		taCodProfessor.setColumns(10);
-		
-		taCodProcesso = new JTextField();
-		taCodProcesso.setBounds(240, 180, 96, 19);
-		tabInscricao.add(taCodProcesso);
-		taCodProcesso.setColumns(10);
 		
 		btnAtualizaInscricao.setBounds(327, 392, 126, 21);
 		tabInscricao.add(btnAtualizaInscricao);
