@@ -34,7 +34,7 @@ public class TelaPrincipal extends JFrame {
 	private JTextField taCodDisciplina;
 	private JTextField tfCodigoDisciplinaIns;
 	private JTextField taCodProfessor;
-	private JTextField tfCodigoProfessorIns;
+	private JTextField tfCpfProfessorIns;
 	private JTextField taCodProcesso;
 	private JTextField tfCodigoProcessoIns;
 
@@ -269,10 +269,10 @@ public class TelaPrincipal extends JFrame {
 		tabInscricao.add(tfCodigoDisciplinaIns);
 		tfCodigoDisciplinaIns.setColumns(10);
 		
-		tfCodigoProfessorIns = new JTextField();
-		tfCodigoProfessorIns.setBounds(240, 137, 96, 19);
-		tabInscricao.add(tfCodigoProfessorIns);
-		tfCodigoProfessorIns.setColumns(10);
+		tfCpfProfessorIns = new JTextField();
+		tfCpfProfessorIns.setBounds(240, 137, 96, 19);
+		tabInscricao.add(tfCpfProfessorIns);
+		tfCpfProfessorIns.setColumns(10);
 		
 		tfCodigoProcessoIns = new JTextField();
 		tfCodigoProcessoIns.setBounds(240, 180, 96, 19);
