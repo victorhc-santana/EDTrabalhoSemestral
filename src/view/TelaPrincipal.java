@@ -235,6 +235,10 @@ public class TelaPrincipal extends JFrame {
 		tabCurso.add(btnCadastroCurso);
 		
 		JButton btnAtualizaCurso = new JButton("Atualizar Curso");
+		btnAtualizaCurso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnAtualizaCurso.setBounds(355, 383, 112, 21);
 		tabCurso.add(btnAtualizaCurso);
 		
@@ -303,7 +307,7 @@ public class TelaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAtualizaInscricao.setBounds(327, 392, 126, 21);
+		btnAtualizaInscricao.setBounds(298, 392, 126, 21);
 		tabInscricao.add(btnAtualizaInscricao);
 		
 		JLabel lblNomeProfessor = new JLabel("Nome do Professor");
