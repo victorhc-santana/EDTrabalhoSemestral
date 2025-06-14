@@ -343,8 +343,8 @@ public class TelaPrincipal extends JFrame {
 		scrollPane.setBounds(26, 183, 563, 166);
 		tabProfessor.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
+		JTextArea taProfessor = new JTextArea();
+		scrollPane.setViewportView(taProfessor);
 		
 		JButton btnBuscaProfessor = new JButton("Busca");
 		btnBuscaProfessor.setBounds(249, 107, 89, 23);
@@ -391,7 +391,7 @@ public class TelaPrincipal extends JFrame {
 		btnAtualizaInscricao.setBounds(327, 392, 126, 21);
 		tabInscricao.add(btnAtualizaInscricao);
 		
-		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor);
+		ControllerProfessor pCont = new ControllerProfessor(tfNomeProfessor, tfCpfProfessor, tfAreaProfessor, tfPontuacaoProfessor, taProfessor);
 		btnCadastroProfessor.addActionListener(pCont);
 		btnAtualizaProfessor.addActionListener(pCont);
 		btnRemoveProfessor.addActionListener(pCont);
