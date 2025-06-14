@@ -2,10 +2,11 @@ package controller;
 
 import java.awt.Desktop.Action;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-public class ControllerDisciplina {
+public class ControllerDisciplina implements ActionListener{
 	private JTextField NomeDisciplina;
 	private JTextField CodigoDisciplina;
 	private JTextField AreaDisciplina;
@@ -23,7 +24,7 @@ public class ControllerDisciplina {
 		HoraInicialDisciplina = horaInicialDisciplina;
 		HorasDiariasDisciplinas = horasDiariasDisciplinas;
 	}
-	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
 		if (cmd.equals("Cadastrar Professor")) {

@@ -1,10 +1,11 @@
 package controller;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-public class ControllerInscricao {
+public class ControllerInscricao implements ActionListener{
 	private JTextField tfCodigoProfessorIns;
 	private JTextField tfCodigoProcessoIns;
 	private JTextField tfCodigoDisciplinaIns;
@@ -16,7 +17,7 @@ public class ControllerInscricao {
 		this.tfCodigoProcessoIns = tfCodigoProcessoIns;
 		this.tfCodigoDisciplinaIns = tfCodigoDisciplinaIns;
 	}
-	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
 		if (cmd.equals("Cadastrar Professor")) {

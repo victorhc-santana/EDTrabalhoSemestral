@@ -4,6 +4,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controller.ControllerCurso;
+import controller.ControllerDisciplina;
+import controller.ControllerInscricao;
 import controller.ControllerProfessor;
 import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
@@ -30,14 +34,9 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfNomeCurso;
 	private JTextField tfAreaCurso;
 	private JTextField tfAreaConhecimento;
-	private JTextField taCodCurso;
-	private JTextField taCodDisciplina;
 	private JTextField tfCodigoDisciplinaIns;
-	private JTextField taCodProfessor;
 	private JTextField tfCpfProfessorIns;
-	private JTextField taCodProcesso;
 	private JTextField tfCodigoProcessoIns;
-
 	private JTextField tfNomeProfessor;
 	private JTextField tfCpfProfessor;
 	private JTextField tfAreaProfessor;
@@ -227,13 +226,13 @@ public class TelaPrincipal extends JFrame {
 		btnRemoveCurso.setBounds(34, 383, 112, 21);
 		tabCurso.add(btnRemoveCurso);
 		
-		JButton btnCadastraCurso = new JButton("Cadastrar Curso");
-		btnCadastraCurso.addActionListener(new ActionListener() {
+		JButton btnCadastroCurso = new JButton("Cadastrar Curso");
+		btnCadastroCurso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnCadastraCurso.setBounds(477, 383, 119, 21);
-		tabCurso.add(btnCadastraCurso);
+		btnCadastroCurso.setBounds(477, 383, 119, 21);
+		tabCurso.add(btnCadastroCurso);
 		
 		JButton btnAtualizaCurso = new JButton("Atualizar Curso");
 		btnAtualizaCurso.setBounds(355, 383, 112, 21);
@@ -286,18 +285,18 @@ public class TelaPrincipal extends JFrame {
 		JTextArea taInscricao = new JTextArea();
 		scrollPane_2.setViewportView(taInscricao);
 		
-		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnBuscar.setBounds(419, 179, 85, 21);
-		tabInscricao.add(btnBuscar);
+		JButton btnBuscarInscricao = new JButton("Buscar");
+		btnBuscarInscricao.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnBuscarInscricao.setBounds(419, 179, 85, 21);
+		tabInscricao.add(btnBuscarInscricao);
 		
 		JButton btnRemoveInscricao = new JButton("Remover Inscrição");
 		btnRemoveInscricao.setBounds(20, 393, 117, 21);
 		tabInscricao.add(btnRemoveInscricao);
 
-		JButton btnInscreverProfessor = new JButton("Inscrever Professor");
-		btnInscreverProfessor.setBounds(463, 392, 146, 21);
-		tabInscricao.add(btnInscreverProfessor);
+		JButton btnCadastroInscricao = new JButton("Inscrever Professor");
+		btnCadastroInscricao.setBounds(463, 392, 146, 21);
+		tabInscricao.add(btnCadastroInscricao);
 		
 		JButton btnAtualizaInscricao = new JButton("Atualizar Inscrição");
 		btnAtualizaInscricao.addActionListener(new ActionListener() {
@@ -382,8 +381,8 @@ public class TelaPrincipal extends JFrame {
 		tabCurso.add(tfAreaConhecimento);
 		tfAreaConhecimento.setColumns(10);
 
-		btnCadastraCurso.setBounds(477, 383, 119, 21);
-		tabCurso.add(btnCadastraCurso);
+		btnCadastroCurso.setBounds(477, 383, 119, 21);
+		tabCurso.add(btnCadastroCurso);
 		
 		btnAtualizaInscricao.setBounds(327, 392, 126, 21);
 		tabInscricao.add(btnAtualizaInscricao);
@@ -393,5 +392,25 @@ public class TelaPrincipal extends JFrame {
 		btnAtualizaProfessor.addActionListener(pCont);
 		btnRemoveProfessor.addActionListener(pCont);
 		btnBuscaProfessor.addActionListener(pCont);
+		
+		ControllerCurso cCont = new ControllerCurso(tfCodigoCurso, tfNomeCurso, tfAreaCurso);
+		btnCadastroCurso.addActionListener(cCont);
+		btnAtualizaCurso.addActionListener(cCont);
+		btnRemoveCurso.addActionListener(cCont);
+		btnBuscaCurso.addActionListener(cCont);
+		
+		ControllerDisciplina dCont = new ControllerDisciplina(tfNomeDisciplina, tfCodigoDisciplina, tfDiaSemanaDisciplina,
+				tfDiaSemanaDisciplina, tfHoraInicialDisciplina, tfHorasDiariasDisciplina);
+		btnCadastroDisciplina.addActionListener(dCont);
+		btnAtualizaDisciplina.addActionListener(dCont);
+		btnRemoveDisciplina.addActionListener(dCont);
+		btnBuscaDisciplina.addActionListener(dCont);
+		
+		ControllerInscricao iCont = new ControllerInscricao(tfCpfProfessorIns, tfCodigoProcessoIns, tfCodigoDisciplinaIns);
+		btnCadastroInscricao.addActionListener(iCont);
+		btnAtualizaInscricao.addActionListener(iCont);
+		btnRemoveInscricao.addActionListener(iCont);
+		btnBuscarInscricao.addActionListener(iCont);
+		
 	}
 }

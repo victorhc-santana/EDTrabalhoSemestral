@@ -1,10 +1,13 @@
 package controller;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-public class ControllerCurso {
+import model.Curso;
+
+public class ControllerCurso implements ActionListener{
 	private JTextField tfNomeCurso;
 	private JTextField tfCodigoCurso;
 	private JTextField tfAreaCurso;
@@ -16,7 +19,7 @@ public class ControllerCurso {
 		this.tfAreaCurso = tfAreaCurso;
 	}
 	
-	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
 		if (cmd.equals("Cadastrar Professor")) {
@@ -36,7 +39,11 @@ public class ControllerCurso {
 }
 
 	private void cadastrocurso() {
-		// TODO Auto-generated method stub
+		Curso curso = new Curso();
+		curso.setCod_curso(Integer.parseInt(tfCodigoCurso.getText()));
+		curso.setNome_curso(tfNomeCurso.getText());
+		curso.setArea_de_conhecimento(tfAreaCurso.getText());
+		curso.setProcesso_aberto(false);
 		
 	}
 
