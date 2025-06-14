@@ -53,15 +53,41 @@ public class ControllerDisciplina implements ActionListener{
 	}
 
 	private void cadastrodisciplina() throws IOException {
-		Disciplina disc = new Disciplina();
-		disc.setCod_curso(Integer.parseInt(tfCodigoCursoDisciplina.getText()));
-		disc.setCod_disciplina(Integer.parseInt(tfCodigoDisciplina.getText()));
-		disc.setDia_semana(tfDiaSemanaDisciplina.getText());
-		disc.setHora_duracao(tfHorasDiariasDisciplinas.getText());
-		disc.setHora_inicial(tfHoraInicialDisciplina.getText());
-		disc.setNome_disciplina(tfNomeDisciplina.getText());
-		arquivadisciplina(disc.toString());
+		// 1. Validação dos campos obrigatórios
+	    if (
+	        tfCodigoCursoDisciplina.getText().isEmpty() ||
+	        tfCodigoDisciplina.getText().isEmpty() ||
+	        tfNomeDisciplina.getText().isEmpty() ||
+	        tfDiaSemanaDisciplina.getText().isEmpty() ||
+	        tfHoraInicialDisciplina.getText().isEmpty() ||
+	        tfHorasDiariasDisciplinas.getText().isEmpty()
+	    ) {
+	        javax.swing.JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+	        return;
+	    }
+
+	    try {
+	        // 2. Conversões com segurança
+	        int codCurso = Integer.parseInt(tfCodigoCursoDisciplina.getText());
+	        int codDisc = Integer.parseInt(tfCodigoDisciplina.getText());
+
+	        Disciplina disc = new Disciplina();
+	        disc.setCod_curso(codCurso);
+	        disc.setCod_disciplina(codDisc);
+	        disc.setDia_semana(tfDiaSemanaDisciplina.getText());
+	        disc.setHora_duracao(tfHorasDiariasDisciplinas.getText());
+	        disc.setHora_inicial(tfHoraInicialDisciplina.getText());
+	        disc.setNome_disciplina(tfNomeDisciplina.getText());
+
+	        arquivadisciplina(disc.toString());
+
+	        javax.swing.JOptionPane.showMessageDialog(null, "Disciplina cadastrada com sucesso!");
+
+	    } catch (NumberFormatException e) {
+	        javax.swing.JOptionPane.showMessageDialog(null, "Código da disciplina e curso devem ser números!");
+	    }
 	}
+	
 
 	private void arquivadisciplina(String csvDisciplina) throws IOException {
 		String path = System.getProperty("user.home") + File.separator + "SistemaProcessos";
