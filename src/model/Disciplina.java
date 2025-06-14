@@ -71,4 +71,9 @@ public class Disciplina {
 	public void setHora_inicial(String hora_inicial) {
 		this.hora_inicial = hora_inicial;
 	}    
+	//Configura string para o modelo de csv
+	@Override
+	public String toString() {
+		return cod_disciplina+";"+cod_curso+";"+nome_disciplina+";"+dia_semana+";"+hora_duracao+";"+hora_inicial;
+	}
 }

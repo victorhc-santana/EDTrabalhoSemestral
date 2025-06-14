@@ -43,5 +43,9 @@ public class Inscricao {
 	}
 	
 	//teste
-	
+	//Configura string para o modelo de csv
+	@Override
+	public String toString() {
+		return cpf_prof+";"+cod_processo+";"+cod_disciplina;
+	}
 }

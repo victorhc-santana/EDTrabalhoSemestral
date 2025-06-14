@@ -45,5 +45,10 @@ public class Curso {
 		this.processo_aberto = processo_aberto;
 	}
 	
+	//Configura string para o modelo de csv
+	@Override
+	public String toString() {
+		return cod_curso+";"+nome_curso+";"+area_de_conhecimento+";"+processo_aberto;
+	}	
 	
 }
