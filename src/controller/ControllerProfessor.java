@@ -35,7 +35,7 @@ public class ControllerProfessor implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
-		if (cmd.equals("Cadastrar Professor")) {
+		if (cmd.equals("Cadastrar professor")) {
 			try {
 				cadastroprofessor();
 			} catch (IOException e1) {

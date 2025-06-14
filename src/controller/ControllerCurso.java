@@ -44,7 +44,7 @@ public class ControllerCurso implements ActionListener{
 			consultacurso();
 		}
 	
-	
+	//teste
 }
 
 	private void cadastrocurso() throws IOException {
