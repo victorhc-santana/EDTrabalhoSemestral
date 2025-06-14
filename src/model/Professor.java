@@ -1,9 +1,9 @@
 package model;
 
 public class Professor {
-	private String nome_professor;
-	private String area_a_inscrever;
-	private int cpf;
+	public String nome_professor; //mudei para public para ler no COntrollerProfessor na Busca
+	public String area_a_inscrever; // mudei para public
+	public String cpf; //mudei para publico para ler no ControllerProfessor na Busca. Mudei para string o CPF
 	private double pontuacao;
 	
 	//Construtor Padrão
@@ -11,7 +11,7 @@ public class Professor {
 	}
 	
 	// Construtor completo
-	public Professor(String nome_professor, String area_a_inscrever, int cpf, double pontuacao) {
+	public Professor(String nome_professor, String area_a_inscrever, String cpf, double pontuacao) { //mudei CPF para String
 		super();
 		this.nome_professor = nome_professor;
 		this.area_a_inscrever = area_a_inscrever;
@@ -36,11 +36,11 @@ public class Professor {
 		this.area_a_inscrever = area_a_inscrever;
 	}
 
-	public int getCpf() {
+	public String getCpf() { //mudei de int para string
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) { //mudei de int para String 
 		this.cpf = cpf;
 	}
 
