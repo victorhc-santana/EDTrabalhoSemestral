@@ -6,23 +6,25 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
+import model.Disciplina;
+
 public class ControllerDisciplina implements ActionListener{
-	private JTextField NomeDisciplina;
-	private JTextField CodigoDisciplina;
-	private JTextField AreaDisciplina;
-	private JTextField DiaSemanaDisciplina;
-	private JTextField HoraInicialDisciplina;
-	private JTextField HorasDiariasDisciplinas;
+	private JTextField tfNomeDisciplina;
+	private JTextField tfCodigoDisciplina;
+	private JTextField tfCodigoCursoDisciplina;
+	private JTextField tfDiaSemanaDisciplina;
+	private JTextField tfHoraInicialDisciplina;
+	private JTextField tfHorasDiariasDisciplinas;
 	
 	public ControllerDisciplina(JTextField nomeDisciplina, JTextField codigoDisciplina, JTextField areaDisciplina,
 			JTextField diaSemanaDisciplina, JTextField horaInicialDisciplina, JTextField horasDiariasDisciplinas) {
 		super();
-		NomeDisciplina = nomeDisciplina;
-		CodigoDisciplina = codigoDisciplina;
-		AreaDisciplina = areaDisciplina;
-		DiaSemanaDisciplina = diaSemanaDisciplina;
-		HoraInicialDisciplina = horaInicialDisciplina;
-		HorasDiariasDisciplinas = horasDiariasDisciplinas;
+		tfNomeDisciplina = nomeDisciplina;
+		tfCodigoDisciplina = codigoDisciplina;
+		tfCodigoCursoDisciplina = areaDisciplina;
+		tfDiaSemanaDisciplina = diaSemanaDisciplina;
+		tfHoraInicialDisciplina = horaInicialDisciplina;
+		tfHorasDiariasDisciplinas = horasDiariasDisciplinas;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -43,7 +45,8 @@ public class ControllerDisciplina implements ActionListener{
 	}
 
 	private void cadastrodisciplina() {
-		// TODO Auto-generated method stub
+		Disciplina disc = new Disciplina();
+		disc.setCod_curso(Integer.parseInt(tfCodigoCursoDisciplina.getText()));
 		
 	}
 

@@ -400,7 +400,7 @@ public class TelaPrincipal extends JFrame {
 		btnBuscaCurso.addActionListener(cCont);
 		
 		ControllerDisciplina dCont = new ControllerDisciplina(tfNomeDisciplina, tfCodigoDisciplina, tfDiaSemanaDisciplina,
-				tfDiaSemanaDisciplina, tfHoraInicialDisciplina, tfHorasDiariasDisciplina);
+				tfCodigoCursoDisciplina, tfHoraInicialDisciplina, tfHorasDiariasDisciplina);
 		btnCadastroDisciplina.addActionListener(dCont);
 		btnAtualizaDisciplina.addActionListener(dCont);
 		btnRemoveDisciplina.addActionListener(dCont);

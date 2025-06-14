@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
+import model.Inscricao;
+
 public class ControllerInscricao implements ActionListener{
 	private JTextField tfCodigoProfessorIns;
 	private JTextField tfCodigoProcessoIns;
@@ -36,8 +38,10 @@ public class ControllerInscricao implements ActionListener{
 	}
 
 	private void cadastroinscricao() {
-		// TODO Auto-generated method stub
-		
+		Inscricao ins = new Inscricao();
+		ins.setCod_disciplina(Integer.parseInt(tfCodigoDisciplinaIns.getText()));
+		ins.setCpf_prof(Integer.parseInt(tfCodigoProfessorIns.getText()));
+		ins.setCod_processo(Integer.parseInt(tfCodigoProcessoIns.getText()));		
 	}
 
 	private void atualizainscricao() {
