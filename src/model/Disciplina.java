@@ -74,6 +74,7 @@ public class Disciplina {
 	//Configura string para o modelo de csv
 	@Override
 	public String toString() {
-		return cod_disciplina+";"+cod_curso+";"+nome_disciplina+";"+dia_semana+";"+hora_duracao+";"+hora_inicial;
+		return cod_curso + ";" +cod_disciplina + ";" + nome_disciplina + ";" + dia_semana + ";" + hora_inicial + ";" + hora_duracao;
+
 	}
 }
