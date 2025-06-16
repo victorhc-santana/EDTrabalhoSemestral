@@ -397,7 +397,7 @@ public class TelaPrincipal extends JFrame {
 		btnRemoveProfessor.addActionListener(pCont);
 		btnBuscaProfessor.addActionListener(pCont);
 		
-		ControllerCurso cCont = new ControllerCurso(tfCodigoCurso, tfNomeCurso, tfAreaCurso);
+		ControllerCurso cCont = new ControllerCurso(tfCodigoCurso, tfNomeCurso, tfAreaCurso, taCurso);
 		btnCadastroCurso.addActionListener(cCont);
 		btnAtualizaCurso.addActionListener(cCont);
 		btnRemoveCurso.addActionListener(cCont);
