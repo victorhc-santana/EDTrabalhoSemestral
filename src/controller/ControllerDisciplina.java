@@ -85,14 +85,7 @@ public class ControllerDisciplina implements ActionListener {
                 return;
             };
 
-            // Constrói linha CSV
-            String linhaCSV = codCurso + ";" + codDisc + ";" +
-                    tfNomeDisciplina.getText() + ";" +
-                    tfDiaSemanaDisciplina.getText() + ";" +
-                    tfHoraInicialDisciplina.getText() + ";" +
-                    tfHorasDiariasDisciplinas.getText();
-
-            arquivadisciplina(linhaCSV);
+            arquivadisciplina(disc.toString());
 
             JOptionPane.showMessageDialog(null, "Disciplina cadastrada com sucesso!");
         } catch (NumberFormatException e) {
@@ -164,32 +157,6 @@ public class ControllerDisciplina implements ActionListener {
 
     }
 
-    private void atualizarArquivoCSV() {
-        String path = System.getProperty("user.home") + File.separator + "SistemaProcessos";
-        File arq = new File(path, "disciplinas.csv");
-
-        try (FileWriter fw = new FileWriter(arq, false); // sobrescreve
-             PrintWriter pw = new PrintWriter(fw)) {
-
-            for (int i = 0; i < listaDisciplinas.size(); i++) {
-                Disciplina d = listaDisciplinas.get(i);
-                String linhaCSV = d.getCod_curso() + ";" +
-                                  d.getCod_disciplina() + ";" +
-                                  d.getNome_disciplina() + ";" +
-                                  d.getDia_semana() + ";" +
-                                  d.getHora_inicial() + ";" +
-                                  d.getHora_duracao();
-
-                pw.println(linhaCSV);
-            }
-
-            pw.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar o arquivo CSV.");
-        }
-    }
-    
     private void salvarListaNoArquivo() throws IOException {
         String path = System.getProperty("user.home") + File.separator + "SistemaProcessos";
         File arq = new File(path, "disciplinas.csv");
@@ -200,10 +167,7 @@ public class ControllerDisciplina implements ActionListener {
         for (int i = 0; i < listaDisciplinas.size(); i++) {
             try {
                 Disciplina d = listaDisciplinas.get(i);
-                String linha = d.getCod_curso() + ";" + d.getCod_disciplina() + ";" +
-                               d.getNome_disciplina() + ";" + d.getDia_semana() + ";" +
-                               d.getHora_inicial() + ";" + d.getHora_duracao();
-                pw.println(linha);
+                pw.println(d.toString());
             } catch (Exception e) {
                 e.printStackTrace(); // opcional
             }
